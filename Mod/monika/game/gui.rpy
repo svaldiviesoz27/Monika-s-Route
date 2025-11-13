@@ -1,4 +1,4 @@
-## gui.rpy
+﻿## gui.rpy
 
 # This file defines all the positions, colors, paths and more of DDLC's GUI
 # interface.
@@ -92,7 +92,7 @@ define -2 gui.game_menu_background = "game_menu_bg"
 # This controls the height of the textbox containing dialogue.
 define -2 gui.textbox_height = 182
 
-# This controls the placement of the textbox vertically on the screen. 
+# This controls the placement of the textbox vertically on the screen.
 # 0.0 is the top, 0.5 is the center, and 1.0 is the bottom.
 define -2 gui.textbox_yalign = 0.99
 
@@ -103,12 +103,12 @@ define gui.name_ypos = -3
 # This controls the horizontal alignment of the character's name.
 define gui.name_xalign = 0.5
 
-# This controls the width, height, and borders of the box containing the 
+# This controls the width, height, and borders of the box containing the
 # characters' name.
 define gui.namebox_width = 168
 define gui.namebox_height = 39
 
-# This controls the borders of the box containing the characters' name in 
+# This controls the borders of the box containing the characters' name in
 # left, top, right, and bottom order.
 define gui.namebox_borders = Borders(5, 5, 5, 2)
 
@@ -128,16 +128,16 @@ define gui.text_xalign = 0.0
 ## Buttons
 # These variables set the buttons in-game.
 
-# This controls the width and height of a button. 
+# This controls the width and height of a button.
 # If None is declared, Ren'Py computes a size for it automatically.
 define gui.button_width = None
 define gui.button_height = 36
 
-# This controls the borders on each side of the button 
+# This controls the borders on each side of the button
 # in left, top, right, bottom order.
 define gui.button_borders = Borders(4, 4, 4, 4)
 
-# This controls whether the button background is tiled and 
+# This controls whether the button background is tiled and
 # increase/decrease its' size or are centered and scaled.
 #  True - Button BG is Tiled | False - Button BG is centered.
 define gui.button_tile = False
@@ -157,7 +157,7 @@ define gui.button_text_insensitive_color = gui.insensitive_color
 # This controls the horizontal alignment of the button text.
 define gui.button_text_xalign = 0.0
 
-# This controls the borders on each side of the 
+# This controls the borders on each side of the
 # check/radio buttons in left, top, right, bottom order.
 define gui.radio_button_borders = Borders(28, 4, 4, 4)
 define gui.check_button_borders = Borders(28, 4, 4, 4)
@@ -165,7 +165,7 @@ define gui.check_button_borders = Borders(28, 4, 4, 4)
 # This controls the horizontal alignment of the confirm button.
 define gui.confirm_button_text_xalign = 0.5
 
-# This controls the borders on each side of the page buttons 
+# This controls the borders on each side of the page buttons
 # in left, top, right, bottom order.
 define gui.page_button_borders = Borders(10, 4, 10, 4)
 
@@ -193,11 +193,11 @@ define gui.choice_button_text_font = gui.default_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 
-define gui.choice_button_text_idle_color = "#000"
+define gui.choice_button_text_idle_color = '#707070'
 define gui.choice_button_text_hover_color = "#fa9"
 
-## File Slot Buttons 
-# This controls the file slot buttons in the save/load menu. 
+## File Slot Buttons
+# This controls the file slot buttons in the save/load menu.
 
 define gui.slot_button_width = 276
 define gui.slot_button_height = 206
@@ -232,7 +232,7 @@ define gui.choice_spacing = 22
 # This controls the spacing between each navigation option in the navigation screen.
 define gui.navigation_spacing = 6
 
-# This controls the spacing between each preference and preference button option 
+# This controls the spacing between each preference and preference button option
 # in the preference screen.
 define gui.pref_spacing = 10
 define gui.pref_button_spacing = 0
@@ -287,14 +287,14 @@ define gui.vbar_borders = Borders(4, 4, 4, 4)
 define gui.vscrollbar_borders = Borders(4, 4, 4, 4)
 define gui.vslider_borders = Borders(4, 4, 4, 4)
 
-# This controls what to do with bars that cannot be scrolled. 
+# This controls what to do with bars that cannot be scrolled.
 #   "hide" - hides the bar | None - keeps the bar shown
 define gui.unscrollable = "hide"
 
 ## History
 # These variables control how the history screen is shown in-game.
 
-# This controls how many lines of dialogue Ren'Py stores in the 
+# This controls how many lines of dialogue Ren'Py stores in the
 # menu to the player.
 define config.history_length = 50
 
@@ -322,7 +322,7 @@ define gui.history_text_xalign = 0.0
 # This controls the default frame size of the NVL window.
 define gui.nvl_borders = Borders(0, 10, 0, 20)
 
-# This controls the height of the NVL dialogue entry. 
+# This controls the height of the NVL dialogue entry.
 #   None will allow each NVL entry to vary in size.
 define gui.nvl_height = 115
 
@@ -392,7 +392,7 @@ init python:
         gui.navigation_spacing = 6
         gui.pref_button_spacing = 10
 
-        ## History 
+        ## History
         gui.history_height = None
         gui.history_text_width = 740
 
