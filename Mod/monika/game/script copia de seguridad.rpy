@@ -50,73 +50,61 @@ label start:
     # 2. ESTO AHORA ESTÁ DESCOMENTADO (ACTIVO)
     if persistent.playthrough == 0:
 
-        # --- INICIO DE NUESTRO SALTO DE DESARROLLADOR ---
-        # 1. Definimos un nombre de jugador por defecto
-        $ persistent.name = "Player"
-        
-        # 2. Saltamos DIRECTAMENTE a la etiqueta de nuestro menú modificado
-        jump ch1_5
-        # --- FIN DE NUESTRO SALTO DE DESARROLLADOR ---
-
-
-        # 3. HEMOS COMENTADO EL INICIO NORMAL DEL JUEGO
-        #    para que nuestro salto funcione.
-
         # This variable sets the chapter number to X depending on the chapter
         # your player is experiencing ATM.
-        # $ chapter = 0
+        $ chapter = 0
 
         # This call statement calls your script label to be played.
-        # call ch0_main
+        call ch0_main
         
         # This call statement calls the poem mini-game to be played.
-        # call poem
+        call poem
 
         ## Day 1
-        # $ chapter = 1
-        # call ch1_main
+        $ chapter = 1
+        call ch1_main
 
         # This call statement calls the poem sharing minigame to be played.
-        # call poemresponse_start
-        # call ch1_end
+        call poemresponse_start
+        call ch1_end
 
-        # call poem
+        call poem
 
         ## Day 2
-        # $ chapter = 2
-        # call ch2_main
-        # call poemresponse_start
-        # call ch2_end
+        $ chapter = 2
+        call ch2_main
+        call poemresponse_start
+        call ch2_end
 
-        # call poem
+        call poem
 
         ## Day 3
-        # $ chapter = 3
-        # call ch3_main
-        # call poemresponse_start
-        # call ch3_end
+        $ chapter = 3
+        call ch3_main
+        call poemresponse_start
+        call ch3_end
 
         ## Day 4
-        # $ chapter = 4
-        # call ch4_main
+        $ chapter = 4
+        call ch4_main
 
         # This python statement writes a file from within the game to the game folder
         # or to the Android/data/[modname]/files/game folder.
-        # python:
-        #     if renpy.android:
-        #         try: renpy.file(os.environ['ANDROID_PUBLIC'] + "/hxppy thxughts.png")
-        #         except IOError: open(os.environ['ANDROID_PUBLIC'] + "/hxppy thxughts.png", "wb").write(renpy.file("hxppy thxughts.png").read())
-        #     else:
-        #         try: renpy.file(config.basedir + "/hxppy thxughts.png")
-        #         except IOError: open(config.basedir + "/hxppy thxughts.png", "wb").write(renpy.file("hxppy thxughts.png").read())
+        python:
+            if renpy.android:
+                try: renpy.file(os.environ['ANDROID_PUBLIC'] + "/hxppy thxughts.png")
+                except IOError: open(os.environ['ANDROID_PUBLIC'] + "/hxppy thxughts.png", "wb").write(renpy.file("hxppy thxughts.png").read())
+            else:
+                try: renpy.file(config.basedir + "/hxppy thxughts.png")
+                except IOError: open(config.basedir + "/hxppy thxughts.png", "wb").write(renpy.file("hxppy thxughts.png").read())
 
         ## Day 5
-        # $ chapter = 5
-        # call ch5_main
+        $ chapter = 5
+        call ch5_main
 
         # This call statement ends the game but doesn't play the credits.
-        # call endgame
-        # return
+        call endgame
+        return
 
     # El resto del juego (Acto 2, 3, 4) permanece comentado por ahora.
     elif persistent.playthrough == 1:
