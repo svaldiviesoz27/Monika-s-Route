@@ -5,12 +5,11 @@
 label ch1_5:
     scene bg club_day
     
-    # --- ¡ARREGLO DE SPRITES! ---
-    # Cargamos a TODAS las chicas en la escena ANTES de que hablen.
-    # Esto evita que el juego crashee más tarde.
-    show monika 1a at t11
-    show yuri 1a at y11
-    show natsuki 1a at n11
+    # --- ¡ARREGLO DE SPRITES (v2)! ---
+    # Usamos las posiciones estándar para que no se pisen.
+    show monika 1a at center
+    show yuri 1a at right
+    show natsuki 1a at left
     with dissolve
     # --- FIN DEL ARREGLO ---
 
@@ -33,14 +32,16 @@ label ch1_5:
 
 # --- INICIO DE NUESTRA RUTA ---
 label monika_route_start:
-    scene bg club_day
-    show monika 1m at t11
+    
+    # No usamos 'scene' para no borrar a Yuri y Natsuki
+    show monika 1m at center
     with dissolve
+
     m "Huh? Me?"
     m "Oh, don't worry about me. I just have a lot of boring club paperwork to do."
     m "It wouldn't be much fun for you..."
     p "I insist. I want to help you."
-    show monika 1l at t11
+    show monika 1l at center
     m "..."
     m "Wow, [player]. I don't know what to say."
     m "Okay... if you really want to. I guess I'll see you this weekend, then."
@@ -55,8 +56,8 @@ label monika_route_start:
 label ch1_7:
     if club_monika:
         m "Okay, everyone! Let's all just take a deep breath."
-        show natsuki 4a at n11
-        show yuri 5a at y11
+        show natsuki 4a at left
+        show yuri 5a at right
         n "Hmph!"
         y "..."
         m "Listen. We're all just a little stressed about the festival."
@@ -68,16 +69,14 @@ label ch1_7:
         jump ch1_8
     else:
         m "Okay, everyone! Let's all just take a deep breath."
-        show natsuki 4a at n11
-        show yuri 5a at y11
+        show natsuki 4a at left
+        show yuri 5a at right
         n "Hmph!"
         y "..."
         m "Yuri, Natsuki, can you just try to get along?"
         m "We're all friends here."
         m "Anyway, [player], you still haven't decided who you're helping yet."
-        m "If you help Natsuki, you'll be...well, with Natsuki."
-        m "And if you help Yuri, you'll be with Yuri."
-        m "And I'll be by myself, which is fine!"
+        # ... (diálogo original) ...
         m "Don't make me choose for you."
         menu:
             "Natsuki.":

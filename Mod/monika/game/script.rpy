@@ -1,8 +1,23 @@
 ## script.rpy
 # (Reemplaza todo tu archivo con esto)
 
-label start:
+# --- INICIO DEL ARREGLO DE DEFINICIONES ---
+# Tenemos que definir manualmente todo lo que nos saltamos
+# con nuestro "Developer Jump".
+    
+# ARREGLO PARA ERROR 2 (Tracebacks 3-6): Definir al jugador 'p'
+define p = Character("[persistent.name]", color="#c8c8c8")
 
+# ARREGLO PARA ERROR 1 (Tracebacks 1-2): Definir posiciones
+define t11 = Transform(xpos=0.5, ypos=1.0, xanchor=0.5, yanchor=1.0)
+define t21 = Transform(xpos=0.25, ypos=1.0, xanchor=0.5, yanchor=1.0)
+define t22 = Transform(xpos=0.75, ypos=1.0, xanchor=0.5, yanchor=1.0)
+define s11 = Transform(xpos=0.25, ypos=1.0, xanchor=0.5, yanchor=1.0)
+define n11 = Transform(xpos=0.4, ypos=1.0, xanchor=0.5, yanchor=1.0)
+define y11 = Transform(xpos=0.6, ypos=1.0, xanchor=0.5, yanchor=1.0)
+# --- FIN DEL ARREGLO DE DEFINICIONES ---
+
+label start:
     # --- Configuración Inicial ---
     $ anticheat = persistent.anticheat
     $ chapter = 0
@@ -23,36 +38,21 @@ label start:
     if persistent.playthrough == 0:
 
         # --- INICIO DE NUESTRO SALTO DE DESARROLLADOR ---
-        
-        # 1. Definimos un nombre de jugador por defecto
         $ persistent.name = "Player"
-
-        # 2. ¡ARREGLO DE NOMBRES! Definimos los nombres correctos.
         $ s_name = "Sayori"
         $ m_name = "Monika"
         $ n_name = "Natsuki"
         $ y_name = "Yuri"
         
-        # 3. Saltamos DIRECTAMENTE a la etiqueta de nuestro menú modificado
         jump ch1_5
         # --- FIN DE NUESTRO SALTO DE DESARROLLADOR ---
 
 
-        # 3. HEMOS COMENTADO EL INICIO NORMAL DEL JUEGO
-        #    para que nuestro salto funcione.
-
-        # This variable sets the chapter number to X depending on the chapter
-        # your player is experiencing ATM.
+        # --- El juego original ESTÁ COMENTADO ---
         # $ chapter = 0
-
-        # This call statement calls your script label to be played.
         # call ch0_main
-        
-        # This call statement calls the poem mini-game to be played.
         # call poem
         # ... (todo lo demás está comentado) ...
-        # ...
-        # call endgame
         # return
 
     # --- El resto de los Actos ---
